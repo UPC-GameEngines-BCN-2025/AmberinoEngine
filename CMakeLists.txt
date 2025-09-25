@@ -13,7 +13,7 @@ find_package(glm CONFIG REQUIRED)
 find_package(SDL3 CONFIG REQUIRED)
 
 # Add source to this project's executable.
-add_executable (AmberinoEngine AmberinoEngine.cpp)
+add_executable (AmberinoEngine src/main.cpp)
 
 target_link_libraries(AmberinoEngine PRIVATE glm::glm)
 target_link_libraries(AmberinoEngine PRIVATE SDL3::SDL3)
