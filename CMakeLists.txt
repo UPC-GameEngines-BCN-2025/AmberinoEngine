@@ -11,9 +11,16 @@ project (AmberinoEngine)
 
 find_package(glm CONFIG REQUIRED)
 find_package(SDL3 CONFIG REQUIRED)
+find_package(imgui CONFIG REQUIRED)
+find_package(glad CONFIG REQUIRED)
+find_package(OpenGL CONFIG REQUIRED)
+
 
 # Add source to this project's executable.
 add_executable (AmberinoEngine src/main.cpp)
 
 target_link_libraries(AmberinoEngine PRIVATE glm::glm)
 target_link_libraries(AmberinoEngine PRIVATE SDL3::SDL3)
+target_link_libraries(AmberinoEngine PRIVATE imgui::imgui)
+target_link_libraries(AmberinoEngine PRIVATE glad::glad)
+target_link_libraries(AmberinoEngine PRIVATE OpenGL::GL)
