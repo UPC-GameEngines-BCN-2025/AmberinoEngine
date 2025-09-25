@@ -3,11 +3,26 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <SDL3/SDL.h>
 
 int main()
 {
-	glm::mat4 rotationMatrix(1.0f);
+	//variables
+	bool running = true;
+	SDL_Event event;
+
+
+	SDL_Window* window = SDL_CreateWindow("Welcome to AmberinoEngine", 600, 600, SDL_WINDOW_OPENGL);
 	
-	std::cout << "Hello CMake and vcpkg." << std::endl;
+	while (running)
+	{
+		while (SDL_PollEvent(&event))
+		{
+			if (event.type == SDL_EVENT_QUIT)
+			{
+				running = false;
+			}
+		}
+	}
 	return 0;
 }
