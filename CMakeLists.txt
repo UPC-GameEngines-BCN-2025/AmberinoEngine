@@ -1,6 +1,6 @@
 ﻿# CMakeList.txt : CMake project for AmberinoEngine, include source and define
 # project specific logic here.
-#
+
 cmake_minimum_required (VERSION 3.8)
 
 set(CMAKE_CXX_STANDARD 17)          # request C++17
@@ -15,7 +15,7 @@ find_package(imgui REQUIRED)
 find_package(glad CONFIG REQUIRED)
 find_package(OpenGL REQUIRED)
 
-
+#Linking the libraries
 # Add source to this project's executable.
 add_executable (AmberinoEngine src/main.cpp)
 
