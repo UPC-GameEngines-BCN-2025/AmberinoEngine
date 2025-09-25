@@ -11,9 +11,9 @@ project (AmberinoEngine)
 
 find_package(glm CONFIG REQUIRED)
 find_package(SDL3 CONFIG REQUIRED)
-find_package(imgui CONFIG REQUIRED)
+find_package(imgui REQUIRED)
 find_package(glad CONFIG REQUIRED)
-find_package(OpenGL CONFIG REQUIRED)
+find_package(OpenGL REQUIRED)
 
 
 # Add source to this project's executable.
@@ -24,3 +24,5 @@ target_link_libraries(AmberinoEngine PRIVATE SDL3::SDL3)
 target_link_libraries(AmberinoEngine PRIVATE imgui::imgui)
 target_link_libraries(AmberinoEngine PRIVATE glad::glad)
 target_link_libraries(AmberinoEngine PRIVATE OpenGL::GL)
+
+target_compile_options(AmberinoEngine PRIVATE $<$<CXX_COMPILER_ID:MSVC>:/GR->$<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-fno-rtti>)
